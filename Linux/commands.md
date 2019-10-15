@@ -20,7 +20,13 @@ jobs //查看当前终端后台运行的任务
 
 ### HTTP请求命令
 curl
+wget
 
 ### 编译命令
 make是用来编译的，它从Makefile中读取指令，然后编译。
 make install是用来安装的，它也从Makefile中读取指令，安装到指定的位置。
+
+### 查看文件内容命令
+more
+less
+cat
