@@ -30,3 +30,6 @@ make install是用来安装的，它也从Makefile中读取指令，安装到指
 more
 less
 cat
+head
+tail
+
