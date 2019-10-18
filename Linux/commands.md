@@ -33,3 +33,7 @@ cat
 head
 tail
 
+### 查看网络连接、端口占用等信息
+netstat
+(常用选项：-anp)
+
