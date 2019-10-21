@@ -45,9 +45,6 @@ nl   显示的时候，顺道输出行号！
 netstat
 (常用选项：-anp)
 
-### 查看用户所在组
-groups
-
 ### 更改文件属组属主属性
 chgrp 更改文件属组
 
@@ -76,3 +73,24 @@ chmod [-R] xyz 文件或目录
 例：chmod -R 777 filename
 ```
 
+### 查看用户所在组
+groups
+
+### 用户和用户组管理
+#### 用户管理
+useradd 添加用户账号
+
+userdel 删除账号
+
+usermod 修改账号
+
+passwd 用户口令(密码)管理
+
+#### 用户组管理
+groupadd 添加用户组
+
+groupdel 删除用户组
+
+groupmod 修改用户组
+
+newgrp 将当前用户切换到其他用户组
