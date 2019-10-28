@@ -27,3 +27,20 @@ Group name:password:group ID:user list
 ```
 登录名:加密口令:最后一次修改时间:最小时间间隔:最大时间间隔:警告时间:不活动时间:失效时间:标志
 ```
+
+### debian或ubuntu的应用程序配置目录
+/usr/share/applications
+
+配置例子：
+```
+// firefox.desktop
+[Desktop Entry]
+Name=firefox_cn
+Comment=firefox_cn
+Exec=/bin/firefox_cn/firefox
+Icon=/bin/firefox_cn/browser/chrome/icons/default/default128.png
+Terminal=false
+Type=Application
+Categories=Application;Development;
+```
+
