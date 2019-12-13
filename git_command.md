@@ -77,6 +77,10 @@ git branch **-D** \<name\> // 强行丢弃一个没有被合并过的分支
 git merge --no-ff -m "merge with no-ff" dev // 加上--no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而fast forward合并就看不出来曾经做过合并。
 
 ### tag
+```
+注意：标签总是和某个commit挂钩。如果这个commit既出现在master分支，又出现在dev分支，那么在这两个分支上都可以看到这个标签。
+```
+
 git tag // 查看所有标签
 
 git tag \<tagname\> // 新建一个标签，默认为HEAD，也可以指定一个commit id<br/>
