@@ -28,9 +28,9 @@ git reflog // 查看命令历史，以便确定要回到未来的哪个版本
 
 git status // 查看仓库当前的状态
 
-git add <file>
+git add \<file\>
 
-git commit -m <message>
+git commit -m \<message\>
 
 ### remote
 
@@ -45,18 +45,18 @@ git fetch origin 远程分支名:本地分支名 // 从远程仓库中拉取指�
 
 ### restore
 
-git checkout -- <file> // 改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令(实际是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。)
+git checkout -- \<file\> // 改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令(实际是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。)
 
 git reset --hard commit_id // 指向某个版本(例: git reset --hard HEAD^指向上一个版本)
 
-git reset HEAD <file> // 不但改乱了工作区某个文件的内容，还添加到了暂存区时，该命令可以清除缓存区的记录，而 checkout -- <file> 可以丢弃工作区的修改<br/>
+git reset HEAD \<file\> // 不但改乱了工作区某个文件的内容，还添加到了暂存区时，该命令可以清除缓存区的记录，而 checkout -- \<file\> 可以丢弃工作区的修改<br/>
 git reset --hard HEAD // 撤销工作目录中所有未提交文件的修改内容
 
 git commit --amend // 修改最后一次提交注释
 
 ### branch operation
 
-git checkout -b <name> // 创建+切换分支
+git checkout -b \<name\> // 创建+切换分支
 
 git branch --set-upstream branch-name origin/branch-name // 建立本地分支和远程分支的关联
 
@@ -65,38 +65,50 @@ git checkout -b branch-name origin/branch-name // 在本地创建和远程分支
 git branch // 查看分支<br/>
 git branch -a // 查看本地和远程分支
 
-git branch <name> // 创建分支
+git branch \<name\> // 创建分支
 
-git checkout <name> // 切换分支
+git checkout \<name\> // 切换分支
 
-git merge <name> // 合并某分支到当前分支
+git merge \<name\> // 合并某分支到当前分支
 
-git branch -d <name> // 删除分支<br/>
-git branch **-D** <name> // 强行丢弃一个没有被合并过的分支
+git branch -d \<name\> // 删除分支<br/>
+git branch **-D** \<name\> // 强行丢弃一个没有被合并过的分支
 
 git merge --no-ff -m "merge with no-ff" dev // 加上--no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而fast forward合并就看不出来曾经做过合并。
 
+### tag
+git tag // 查看所有标签
+
+git tag \<tagname\> // 新建一个标签，默认为HEAD，也可以指定一个commit id<br/>
+git tag -a \<tagname\> -m "blablabla..." // 新建一个标签并指定标签信息
+
+git tag -d \<tagname\> // 删除一个本地标签
+
+git push origin \<tagname\> // 推送一个本地标签<br/>
+git push origin --tags // 推送全部未推送过的本地标签<br/>
+git push origin :refs/tags/\<tagname\> // 删除一个远程标签
+
 ### file operation
-git mv -f oldfolder newfolder // 重命名文件和文件夹<br>
-git add -u newfolder // -u 选项会更新已经追踪的文件和文件夹。<br>
-git mv foldername tempname && git mv tempname folderName // 在大小写不敏感的系统中，如windows，重命名文件的大小写,使用临时文件名<br>
+git mv -f oldfolder newfolder // 重命名文件和文件夹<br/>
+git add -u newfolder // -u 选项会更新已经追踪的文件和文件夹。<br/>
+git mv foldername tempname && git mv tempname folderName // 在大小写不敏感的系统中，如windows，重命名文件的大小写,使用临时文件名<br/>
 git mv -n foldername folderName // 显示重命名会发生的改变，不进行重命名操作
 
 ---
 
-git diff // 查看修改内容<br>
-git diff filename // 查看尚未暂存的某个文件更新了哪些<br>
-git diff –cached // 查看已经暂存起来的文件和上次提交的版本之间的差异<br>
-git diff –cached filename // 查看已经暂存起来的某个文件和上次提交的版本之间的差异<br>
-git diff ffd98 b8e7b // 查看某两个版本之间的差异<br>
-git diff ffd98:filename b8e7b:filename 查看某两个版本的某个文件之间的差异<br>
+git diff // 查看修改内容<br/>
+git diff filename // 查看尚未暂存的某个文件更新了哪些<br/>
+git diff –cached // 查看已经暂存起来的文件和上次提交的版本之间的差异<br/>
+git diff –cached filename // 查看已经暂存起来的某个文件和上次提交的版本之间的差异<br/>
+git diff ffd98 b8e7b // 查看某两个版本之间的差异<br/>
+git diff ffd98:filename b8e7b:filename 查看某两个版本的某个文件之间的差异<br/>
 
-git rm <file> // 删除一个文件, 需要commit
+git rm \<file\> // 删除一个文件, 需要commit
 
-git stash // 把当前工作现场储藏起来<br>
-git stash list // 显示储藏的工作内容表<br>
-git stash apply stash@{0} // 恢复指定的储藏内容，但是恢复后，stash内容并不删除<br>
-git stash drop stash@{0} // 删除指定的储藏内容<br>
-git stash clear // 删除所有缓存的stash<br>
+git stash // 把当前工作现场储藏起来<br/>
+git stash list // 显示储藏的工作内容表<br/>
+git stash apply stash@{0} // 恢复指定的储藏内容，但是恢复后，stash内容并不删除<br/>
+git stash drop stash@{0} // 删除指定的储藏内容<br/>
+git stash clear // 删除所有缓存的stash<br/>
 git stash pop stash@{0} // 恢复指定的储藏内容，并把stash内容删除
 
