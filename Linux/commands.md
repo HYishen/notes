@@ -181,3 +181,17 @@ umount 磁盘卸除
 sed
 
 awk
+
+### 检查那些进程使用了某个文件
+fuser命令
+fuser能查出谁在使用这个资源
+
+```
+// 该命令能查出有那些进程在使用 /var/cache/debconf/config.dat这个文件
+sudo fuser -v /var/cache/debconf/config.dat
+
+在查出有那些进程使用这个文件时，有必要就使用
+sudo kill PID
+sudo kill -9 PID  # if the first doesn't work
+来杀掉这个进程
+```
