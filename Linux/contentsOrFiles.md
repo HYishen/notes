@@ -35,13 +35,16 @@ Group name:password:group ID:user list
 ```
 // firefox.desktop
 [Desktop Entry]
-Name=firefox_cn
-Comment=firefox_cn
-Exec=/bin/firefox_cn/firefox
-Icon=/bin/firefox_cn/browser/chrome/icons/default/default128.png
+Name=firefox
+Name[zh_CN]=火狐浏览器
+Comment=火狐浏览器
+Exec=/opt/firefox/firefox
+Icon=/opt/firefox/browser/chrome/icons/default/default128.png
 Terminal=false
 Type=Application
-Categories=Application;Development;
+Categories=Appliction;
+Encoding=UTF-8
+StartupNotify=true
 ```
 
 ### /dev/null 文件
