@@ -13,3 +13,9 @@ Vinagre
 ### 文本形式浏览网站
 w3m
 
+### 查看CPU温度
+sudo apt-get install lm-sensors
+
+使用命令：
+
+sensors
