@@ -19,3 +19,8 @@ sudo apt-get install lm-sensors
 使用命令：
 
 sensors
+
+### 截图软件
+sudo apt install flameshot
+
+flameshot
