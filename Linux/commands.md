@@ -78,6 +78,15 @@ nl   显示的时候，顺道输出行号！
 命令tee，在屏幕上显示的同时，将读取的内容也重定向到指定文件中
 ```
 
+例子：
+```
+sudo tee /etc/docker/daemon.json <<-'EOF'
+{
+  "registry-mirrors": ["https://xxxxxxxx.mirror.aliyuncs.com"]
+}
+EOF
+```
+
 ### 查看网络连接、端口占用等信息
 netstat
 (常用选项：-anp)
