@@ -1,3 +1,15 @@
+#### server.properties配置内容
+```
+// broker id
+broker.id=0
+
+// 运行数据存储地方
+log.dirs=/opt/kafka_2.12-2.4.1/data
+
+// 配置连接zookeeper集群地址
+zookeeper.connect=localhost:2181
+```
+
 #### 启动kafka
 ```
 bin/kafka-server-start.sh [-daemon] config/server.properties
