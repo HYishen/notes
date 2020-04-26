@@ -28,6 +28,21 @@ Group name:password:group ID:user list
 登录名:加密口令:最后一次修改时间:最小时间间隔:最大时间间隔:警告时间:不活动时间:失效时间:标志
 ```
 
+### /dev/null 文件
+/dev/null 是一个特殊的文件，写入到它的内容都会被丢弃；如果尝试从该文件读取内容，那么什么也读不到。但是 /dev/null 文件非常有用，将命令的输出重定向到它，会起到"禁止输出"的效果。
+
+如果希望屏蔽 stdout 和 stderr，可以这样写：
+```
+command > /dev/null 2>&1
+```
+
+### /etc/hosts 文件
+hosts文件是linux系统中负责ip地址与域名快速解析的文件，以ASCII格式保存在/etc目录下，文件名为hosts，不同的linux版本，文件也可能不同，比如Debian的对应文件是/etc/hostname。hosts文件包含了ip地址和主机名之间的映射，包括主机名的别名，在没有域名服务器的情况下，系统上的所有网络程序都通过查询该文件来解析对应于某个主机名的ip地址，否则就需要使用DNS服务程序来解决。通常可以将常用的域名和ip地址映射加入到hosts文件中，实现快速方便的访问
+
+优先级：dns缓存 \> hosts \> dns服务
+
+hosts：the static table lookup for host name（主机名查询静态表）
+
 ### debian或ubuntu的应用程序配置目录
 /usr/share/applications
 
@@ -45,12 +60,4 @@ Type=Application
 Categories=Appliction;
 Encoding=UTF-8
 StartupNotify=true
-```
-
-### /dev/null 文件
-/dev/null 是一个特殊的文件，写入到它的内容都会被丢弃；如果尝试从该文件读取内容，那么什么也读不到。但是 /dev/null 文件非常有用，将命令的输出重定向到它，会起到"禁止输出"的效果。
-
-如果希望屏蔽 stdout 和 stderr，可以这样写：
-```
-command > /dev/null 2>&1
 ```
