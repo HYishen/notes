@@ -10,6 +10,12 @@ log.dirs=/opt/kafka_2.12-2.4.1/data
 zookeeper.connect=localhost:2181
 ```
 
+#### consumer.properties配置
+```
+// 配置消费者组
+group.id=[group name]
+```
+
 #### 启动kafka
 ```
 bin/kafka-server-start.sh [-daemon] config/server.properties
