@@ -16,7 +16,7 @@ kafka有两种分配策略，一是RoundRobin，一是Range。
 把所有的topic当作一个整体，这些topic的所有partition以轮循的方式一个一个地分配给consumer group。
 
 #### Range
-把一个topic当作一个整体，这些topic中的partition以轮循的方式一个一个地分配给consumer group。不过这种策略有个问题是，在多个topic的partition进行分配之后，有一些consumer group中的consumer会得到比较多个partition。
+把一个topic当作一个整体。Range的消费策略是先看哪个consumer订阅了这个主题，然后再看consumer所属的consumer group。如果一个consumer group中，有A、B两个consumer，其中只有B订阅了topic，那么topic的消息会只发送给B。如果A、B同时订阅了topic，那么就以轮循的方式把topic中的partition分配给A和B。
 
 ### offset的维护
 由于consumer在消费过程中会出现断电宕机等故障，consumer恢复后，需要从故障前的位置继续消费，所以consumer需要实时记录自己消费到了哪个offset，一遍故障恢复后继续消费。
