@@ -1,0 +1,3 @@
+kafka集群中有一个broker会被选举为Controller，负责管理集群broker的上下线，所有topic的分区副本分配和leader选举等工作。
+
+Controller的管理工作都是依赖于zookeeper的。
