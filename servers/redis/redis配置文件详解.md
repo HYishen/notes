@@ -1,0 +1,1 @@
+redis的配置文件位于redis的安装目录下，名字为redis.conf
