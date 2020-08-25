@@ -1,5 +1,0 @@
-maven 编译、打包、运行
-idea远程调试
-vim
-bash
-
