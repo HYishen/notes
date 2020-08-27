@@ -3,6 +3,8 @@ Spring容器
 
 BeanFactory 是 IoC 底层容器
 
+BeanFactory最根本的核心类:DefaultListableBeanFactory
+
 FactoryBean 是 创建 Bean 的一种方式，帮助实现复杂的初始化逻辑
 
 ### BeanDefinition
