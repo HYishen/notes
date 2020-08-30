@@ -28,3 +28,5 @@ public UserHolder userHolder(@Qualifier("user") User user) {
 
 ### AnnotationConfigUtils
 org.springframework.context.annotation.AnnotationConfigUtils
+// 在给定的注册表中注册所有相关的注释后处理器
+org.springframework.context.annotation.AnnotationConfigUtils#registerAnnotationConfigProcessors(org.springframework.beans.factory.support.BeanDefinitionRegistry, java.lang.Object)
