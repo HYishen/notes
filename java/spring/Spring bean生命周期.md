@@ -63,3 +63,17 @@ org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#get
 
 org.springframework.beans.factory.support.SimpleInstantiationStrategy#instantiate(org.springframework.beans.factory.support.RootBeanDefinition, java.lang.String, org.springframework.beans.factory.BeanFactory)
 ```
+
+### 实例化后阶段
+- Bean 属性赋值（Populate）判断
+  - InstantiationAwareBeanPostProcessor#postProcessAfterInstantiation
+
+如果postProcessAfterInstantiation方法返回false，postProcessAfterInstantiation方法中对bean进行的操作（如赋值）会生效，但是之后的属性赋值操作将会被跳过。
+
+```
+org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#doCreateBean
+
+org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#populateBean
+
+org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessor#postProcessAfterInstantiation
+```
