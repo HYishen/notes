@@ -93,3 +93,33 @@ org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#pop
 
 org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessor#postProcessProperties
 ```
+
+### Aware 接口回调阶段
+- Spring Aware 接口(按顺序回调)
+  - BeanNameAware
+  - BeanClassLoaderAware
+  - BeanFactoryAware
+  - EnvironmentAware
+  - EmbeddedValueResolverAware
+  - ResourceLoaderAware
+  - ApplicationEventPublisherAware
+  - MessageSourceAware
+  - ApplicationContextAware
+
+```
+// BeanFactory ---------------------------------------------------------------
+org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#doCreateBean
+
+org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#initializeBean(java.lang.String, java.lang.Object, org.springframework.beans.factory.support.RootBeanDefinition)
+
+org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#invokeAwareMethods
+
+// Application ---------------------------------------------------------------
+org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#initializeBean(java.lang.String, java.lang.Object, org.springframework.beans.factory.support.RootBeanDefinition)
+
+org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#applyBeanPostProcessorsBeforeInitialization
+
+org.springframework.context.support.ApplicationContextAwareProcessor#postProcessBeforeInitialization
+
+org.springframework.context.support.ApplicationContextAwareProcessor#invokeAwareInterfaces
+```
