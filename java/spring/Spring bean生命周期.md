@@ -77,3 +77,19 @@ org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#pop
 
 org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessor#postProcessAfterInstantiation
 ```
+
+### 属性赋值前阶段
+- Bean 属性值元信息
+  - PropertyValues
+
+- Bean 属性赋值前回调
+  - Spring 1.2 - 5.0：InstantiationAwareBeanPostProcessor#postProcessPropertyValues
+  - Spring 5.1：InstantiationAwareBeanPostProcessor#postProcessProperties
+
+```
+org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#doCreateBean
+
+org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#populateBean
+
+org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessor#postProcessProperties
+```
