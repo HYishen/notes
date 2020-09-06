@@ -172,3 +172,52 @@ org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#app
 
 org.springframework.beans.factory.config.BeanPostProcessor#postProcessAfterInitialization
 ```
+
+### 初始化完成阶段
+- 方法回调
+  - Spring 4.1 +：SmartInitializingSingleton#afterSingletonsInstantiated
+  - DefaultListableBeanFactory#preInstantiateSingletons
+> SmartInitializingSingleton 通常在 Spring ApplicationContext 场景使用
+> preInstantiateSingletons 将已注册的 BeanDefinition 初始化成 Spring Bean
+
+### 销毁前阶段
+- 方法回调
+  - DestructionAwareBeanPostProcessor#postProcessBeforeDestruction
+
+> 执行 Bean 销毁（容器内）
+> Bean 销毁并不意味着 Bean 垃圾回收了
+
+```
+org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#destroyBean
+
+org.springframework.beans.factory.support.DisposableBeanAdapter#destroy
+
+org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor#postProcessBeforeDestruction
+```
+
+### 销毁阶段
+- Bean 销毁（Destroy）
+  - @PreDestroy 标注方法
+  - 实现 DisposableBean 接口的 destroy() 方法
+  - 自定义销毁方法
+
+```
+org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#destroyBean
+
+org.springframework.beans.factory.support.DisposableBeanAdapter#destroy
+
+// 1.@PreDestroy 标注方法执行
+org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor#postProcessBeforeDestruction
+
+// 2.实现 DisposableBean 接口的 destroy() 方法执行。((DisposableBean) this.bean).destroy();
+org.springframework.beans.factory.DisposableBean#destroy
+
+// 3.自定义销毁方法
+org.springframework.beans.factory.support.DisposableBeanAdapter#invokeCustomDestroyMethod
+```
+
+### 垃圾收集
+- Bean 垃圾回收（GC）
+  - 关闭 Spring 容器（应用上下文）
+  - 执行 GC
+  - Spring Bean 覆盖的 finalize() 方法被回调
