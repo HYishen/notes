@@ -123,3 +123,52 @@ org.springframework.context.support.ApplicationContextAwareProcessor#postProcess
 
 org.springframework.context.support.ApplicationContextAwareProcessor#invokeAwareInterfaces
 ```
+
+### 初始化前阶段
+- 已完成
+  - Bean 实例化（实例化前、实例化、实例化后）
+  - Bean 属性赋值
+  - Bean Aware 接口回调
+
+- 方法回调
+  - BeanPostProcessor#postProcessBeforeInitialization
+
+```
+org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#initializeBean(java.lang.String, java.lang.Object, org.springframework.beans.factory.support.RootBeanDefinition)
+
+org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#applyBeanPostProcessorsBeforeInitialization
+
+org.springframework.beans.factory.config.BeanPostProcessor#postProcessBeforeInitialization
+```
+
+### 初始化阶段
+- Bean 初始化（Initialization）
+  - @PostConstruct 标注方法
+  - 实现 InitializingBean 接口的 afterPropertiesSet() 方法
+  - 自定义初始化方法
+
+```
+org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#initializeBean(java.lang.String, java.lang.Object, org.springframework.beans.factory.support.RootBeanDefinition)
+
+// 1.CommonAnnotationBeanPostProcessor对@PostConstruct 标注方法执行
+org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#applyBeanPostProcessorsBeforeInitialization
+
+org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#invokeInitMethods
+
+// 2.afterPropertiesSet回调
+org.springframework.beans.factory.InitializingBean#afterPropertiesSet
+
+// 3.执行自定义的init-method
+org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#invokeCustomInitMethod
+```
+
+### 初始化后阶段
+- BeanPostProcessor#postProcessAfterInitialization
+
+```
+org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#initializeBean(java.lang.String, java.lang.Object, org.springframework.beans.factory.support.RootBeanDefinition)
+
+org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#applyBeanPostProcessorsAfterInitialization
+
+org.springframework.beans.factory.config.BeanPostProcessor#postProcessAfterInitialization
+```
