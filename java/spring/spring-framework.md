@@ -14,6 +14,8 @@ BeanDefinitionBuilder可以用来构建BeanDefinition
 
 而applicationContext.registerBeanDefinition可以用来注册Bean
 
+凡是Bean的注册都是BeanDefinitionRegistry来进行注册，最后会存到基本上唯一的实现DefaultListableBeanFactory，然后做一个map进行保存，通过List的方式来存储它的名称
+
 #### Java注解配置元信息
 
 ```
