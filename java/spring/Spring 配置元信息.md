@@ -147,3 +147,66 @@ org.springframework.beans.factory.xml.BeanDefinitionParserDelegate
     - BeanDefinition 解析 - 内部 API 实现
     - BeanDefinition 处理 - AnnotationConfigUtils.processCommonDefinitionAnnotations
     - BeanDefinition 注册 - BeanDefinitionRegistry
+
+### 基于 XML 资源装载 Spring IoC 容器配置元信息
+#### Spring IoC 容器相关 XML 配置
+| 命名空间 | 所属模块       | Schema 资源 URL                                                  |
+| -------- | -------------- | ---------------------------------------------------------------- |
+| beans    | spring-beans   | https://www.springframework.org/schema/beans/spring-beans.xsd    |
+| context  | spring-context | https://www.springframework.org/schema/context/springcontext.xsd |
+| aop      | spring-aop     | https://www.springframework.org/schema/aop/spring-aop.xsd        |
+| tx       | spring-tx      | https://www.springframework.org/schema/tx/spring-tx.xsd          |
+| util     | spring-beans   | https://www.springframework.org/schema/util/spring-util.xsd      |
+| tool     | spring-beans   | https://www.springframework.org/schema/tool/spring-tool.xsd      |
+
+### 基于 Java 注解装载 Spring IoC 容器配置元信息
+#### Spring IoC 容器装配注解
+| Spring 注解     | 场景说明                                    | 起始版本 |
+| --------------- | ------------------------------------------- | -------- |
+| @ImportResource | 替换 XML 元素 \<import\>                    | 3.0      |
+| @Import         | 导入 Configuration Class                    | 3.0      |
+| @ComponentScan  | 扫描指定 package 下标注 Spring 模式注解的类 | 3.1      |
+
+#### Spring IoC 配属属性注解
+| Spring 注解      | 场景说明                         | 起始版本 |
+| ---------------- | -------------------------------- | -------- |
+| @PropertySource  | 配置属性抽象 PropertySource 注解 | 3.1      |
+| @PropertySources | @PropertySource 集合注解         | 4.0      |
+
+### 基于 Extensible XML authoring 扩展 Spring XML 元素
+- Spring XML 扩展
+  - 编写 XML Schema 文件：定义 XML 结构
+  - 自定义 NamespaceHandler 实现：命名空间绑定
+  - 自定义 BeanDefinitionParser 实现：XML 元素与 BeanDefinition 解析
+  - 注册 XML 扩展：命名空间与 XML Schema 映射
+
+### Extensible XML authoring 扩展原理
+- 触发时机
+  - AbstractApplicationContext#obtainFreshBeanFactory
+    - AbstractRefreshableApplicationContext#refreshBeanFactory
+      - AbstractXmlApplicationContext#loadBeanDefinitions
+        - ...
+          - XmlBeanDefinitionReader#doLoadBeanDefinitions
+            - ...
+              - BeanDefinitionParserDelegate#parseCustomElement
+
+- 核心流程
+  - BeanDefinitionParserDelegate#parseCustomElement(org.w3c.dom.Element, BeanDefinition)
+    - 获取 namespace
+    - 通过 namespace 解析 NamespaceHandler
+    - 构造 ParserContex
+    - 解析元素，获取 BeanDefinintion
+
+### 基于 Properties 资源装载外部化配置
+- 注解驱动
+  - @org.springframework.context.annotation.PropertySource
+  - @org.springframework.context.annotation.PropertySources
+- API 编程
+  - org.springframework.core.env.PropertySource
+  - org.springframework.core.env.PropertySources
+
+### 基于 YAML 资源装载外部化配置
+- API 编程
+  - org.springframework.beans.factory.config.YamlProcessor
+    - org.springframework.beans.factory.config.YamlMapFactoryBean
+    - org.springframework.beans.factory.config.YamlPropertiesFactoryBean
