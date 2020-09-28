@@ -48,7 +48,7 @@ org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#cre
   - 传统实例化方式
     - 实例化策略 - InstantiationStrategy
   - 构造器依赖注入
-    - 构造器注入按照类型注入，类型注入实际上是使用依赖注入来操作DefaultListableBeanFactory#resolveDependencyresolveDependency
+    - 构造器注入按照类型注入，类型注入实际上是使用依赖注入来操作DefaultListableBeanFactory#resolveDependency
 
 ```
 org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#createBean(java.lang.String, org.springframework.beans.factory.support.RootBeanDefinition, java.lang.Object[])
