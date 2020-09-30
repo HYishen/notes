@@ -34,13 +34,13 @@ org.springframework.beans.factory.support.AbstractBeanDefinition#resolveBeanClas
   - InstantiationAwareBeanPostProcessor#postProcessBeforeInstantiation
 
 ```
-org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessor#postProcessBeforeInstantiation
-
-org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#applyBeanPostProcessorsBeforeInstantiation
+org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#createBean(java.lang.String, org.springframework.beans.factory.support.RootBeanDefinition, java.lang.Object[])
 
 org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#resolveBeforeInstantiation
 
-org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#createBean(java.lang.String, org.springframework.beans.factory.support.RootBeanDefinition, java.lang.Object[])
+org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#applyBeanPostProcessorsBeforeInstantiation
+
+org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessor#postProcessBeforeInstantiation
 ```
 
 ### 实例化阶段
@@ -71,6 +71,8 @@ org.springframework.beans.factory.support.SimpleInstantiationStrategy#instantiat
 如果postProcessAfterInstantiation方法返回false，postProcessAfterInstantiation方法中对bean进行的操作（如赋值）会生效，但是之后的属性赋值操作将会被跳过。
 
 ```
+org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#createBean(java.lang.String, org.springframework.beans.factory.support.RootBeanDefinition, java.lang.Object[])
+
 org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#doCreateBean
 
 org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#populateBean
@@ -134,6 +136,10 @@ org.springframework.context.support.ApplicationContextAwareProcessor#invokeAware
   - BeanPostProcessor#postProcessBeforeInitialization
 
 ```
+org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#createBean(java.lang.String, org.springframework.beans.factory.support.RootBeanDefinition, java.lang.Object[])
+
+org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#doCreateBean
+
 org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#initializeBean(java.lang.String, java.lang.Object, org.springframework.beans.factory.support.RootBeanDefinition)
 
 org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#applyBeanPostProcessorsBeforeInitialization
