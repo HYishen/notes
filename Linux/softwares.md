@@ -13,6 +13,24 @@ nethogs可以查看实时进程网络占用
 
 即 nethogs + 网卡名称
 
+### xclip 粘贴板
+xclip 命令可以从 stdin，或者文件读入数据到剪贴板，或者将剪贴板内容粘贴到目的应用中。xclip 命令建立了终端和剪切板之间通道，可以用命令的方式将终端输出或文件的内容保存到剪切板中，也可以将剪切板的内容输出到终端或文件
+
+```
+// 安装
+sudo apt-get xclip
+```
+
+```
+https://en.wikipedia.org/wiki/X_Window_selection
+
+在 X 系统里面，从一个窗口复制一段文字到另一个窗口，有两套机制，分别是 Selections 和 cut buffers。
+
+常用的 copy & paste 是利用的 cut buffers 机制;另外用鼠标选中一段文字，然后在另一个窗口按鼠标中键实现复制，利用的是 selections 机制。selection 又可以分为 master 和 slave selection。
+
+当用鼠标选中一段文件，这段文字就自动被复制到 master selection。然后在另一个地方按鼠标中键，就自动把 master selection 的内容粘贴出来。
+```
+
 ### 远程桌面连接
 remmina
 
