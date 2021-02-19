@@ -20,4 +20,9 @@ public <T> T getBean(Class<T> requiredType) throws BeansException {
 }
 ```
 
-结论：BeanFactory才是Spring IOC容器
+结论：
+```
+BeanFactory是Spring底层IOC容器
+
+而ApplicationContext是具备应用特性的BeanFactory超集
+```
