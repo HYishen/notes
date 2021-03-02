@@ -19,3 +19,11 @@ Environment environment = applicationContext.getBean(Environment.class);
 如：
 private BeanFactory beanFactory; // 內建非 Bean 对象（依赖）
 ```
+
+- 外部单体对象
+```
+外部单体对象的生命周期并不由Spring容器进行管理，但是也可以被Spring IOC容器来托管。
+
+注册外部单体对象接口：
+org.springframework.beans.factory.config.SingletonBeanRegistry
+```
