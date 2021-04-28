@@ -32,3 +32,14 @@ java.util.concurrent.locks.Condition#signal
 
 java.util.concurrent.locks.Condition#signalAll
 ```
+
+### java.util.concurrent.Semaphore
+信号量
+
+### java.util.concurrent.locks.ReadWriteLock
+```
+java.util.concurrent.locks.ReadWriteLock
+
+java.util.concurrent.locks.ReentrantReadWriteLock
+```
+
