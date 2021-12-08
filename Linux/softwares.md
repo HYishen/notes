@@ -50,3 +50,12 @@ sensors
 sudo apt install flameshot
 
 flameshot
+
+### socket
+```
+nc
+
+// 持续监听端口
+nc -lk [port]
+
+```

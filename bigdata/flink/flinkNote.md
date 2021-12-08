@@ -1,3 +1,8 @@
+#### 他人学习笔记
+```
+https://ashiamd.github.io/docsify-notes/#/study/BigData/Flink/README
+```
+
 使用flink的场景
 
 延时性要求低的场景
