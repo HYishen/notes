@@ -7,6 +7,16 @@ ls
 ls /usr/bin/*.sh
 ```
 
+### 作为参数传给下一个命令
+xargs
+```
+xargs 是一个强有力的命令，它能够捕获一个命令的输出，然后传递给另外一个命令。
+
+命令格式：
+
+somecommand |xargs [-item]  command
+```
+
 ### 查看内核版本命令
 uname -a
 
