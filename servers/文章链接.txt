@@ -1,0 +1,2 @@
+// 分布式必备理论基础：CAP和BASE
+https://www.cnblogs.com/three-fighter/p/15293310.html
