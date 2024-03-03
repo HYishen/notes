@@ -62,6 +62,23 @@ git pull // 抓取远程的新提交
 #### git fetch
 ```
 git fetch origin 远程分支名:本地分支名 // 从远程仓库中拉取指定分支(该方式不会主动切本地分支)
+
+git fetch <远程主机名> //这个命令将某个远程主机的更新全部取回本地
+
+// 最常见的命令如取回origin 主机的master 分支
+git fetch origin master
+
+//在本地新建一个temp分支，并将远程origin仓库的master分支代码下载到本地temp分支
+git fetch origin master:tmp 
+
+//来比较本地代码与刚刚从远程下载下来的代码的区别
+git diff tmp 
+
+//合并temp分支到本地的master分支
+git merge tmp
+
+//如果不想保留temp分支 可以用这步删除
+git branch -d temp
 ```
 
 #### 创建和远程对应的分支

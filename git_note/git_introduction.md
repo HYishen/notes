@@ -390,6 +390,59 @@ git push -u origin <branch name>
 git push origin <branch name>
 ```
 
+##### git fetch
+FETCH_HEAD： 是一个版本链接，记录在本地的一个文件中，指向着目前已经从远程仓库取下来的分支的末端版本。
+
+commit-id：在每次本地工作完成后，都会做一个git commit 操作来保存当前工作到本地的repo， 此时会产生一个commit-id，这是一个能唯一标识一个版本的序列号。 在使用git push后，这个序列号还会同步到远程仓库。
+
+有了以上的概念再来说说git fetch
+
+git fetch：这将更新git remote 中所有的远程仓库所包含分支的最新commit-id, 将其记录到.git/FETCH_HEAD文件中
+
+git fetch更新远程仓库的方式如下：
+```
+git fetch <远程主机名> //这个命令将某个远程主机的更新全部取回本地
+
+// 最常见的命令如取回origin 主机的master 分支
+git fetch origin master
+
+//在本地新建一个temp分支，并将远程origin仓库的master分支代码下载到本地temp分支
+git fetch origin master:tmp 
+
+//来比较本地代码与刚刚从远程下载下来的代码的区别
+git diff tmp 
+
+//合并temp分支到本地的master分支
+git merge tmp
+
+//如果不想保留temp分支 可以用这步删除
+git branch -d temp
+```
+
+（1）如果直接使用git fetch，则步骤如下：
+
+创建并更新本 地远程分支。即创建并更新origin/xxx 分支，拉取代码到origin/xxx分支上。
+
+在FETCH_HEAD中设定当前分支origin/当前分支对应，如直接到时候git merge就可以将origin/abc合并到abc分支上。
+
+（2）git fetch origin
+
+只是手动指定了要fetch的remote。在不指定分支时通常默认为master
+
+（3）git fetch origin dev
+
+指定远程remote和FETCH_HEAD，并且只拉取该分支的提交。
+
+##### git pull
+
+```
+git pull 的过程可以理解为
+
+git fetch origin master //从远程主机的master分支拉取最新内容 
+
+git merge FETCH_HEAD    //将拉取下来的最新内容合并到当前所在的分支中
+```
+
 ##### 创建和远程对应的分支
 ```
 // 在本地创建和远程分支对应的分支，本地和远程分支的名称最好一致；
@@ -407,7 +460,10 @@ git branch --set-upstream branch-name origin/branch-name
 #### git log 查看提交记录
 
 ```
-git log --graph命令可以看到分支合并图
+git log --graph // 命令可以看到分支合并图
+
+// 可以看到返回的信息包括更新的文件名，更新的作者和时间，以及更新的代码
+git log -p FETCH_HEAD
 ```
 
 #### git reset 版本回退
