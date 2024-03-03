@@ -12,8 +12,9 @@
 
 当然在真实的开发环境下，还是会有一台充当“中央服务器”的机器，方便交换大家的代码修改，例如GitHub，Gitee，GitLab。
 
-#### 工作区和暂存区
-Git和其他版本控制系统如SVN的一个不同之处就是有暂存区的概念。
+#### git结构介绍
+
+![git_structure](git_structure.png)
 
 ##### 工作区（Working Directory）
 就是你在电脑里能看到的目录，例如: 

@@ -1,0 +1,73 @@
+<mxfile host="Electron" modified="2024-03-03T10:46:29.381Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.1.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="WK-7q-bS_9AB9Rkm9Yi2" version="23.1.5" type="device">
+  <diagram name="Page-1" id="2YBvvXClWsGukQMizWep">
+    <mxGraphModel dx="1026" dy="656" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bMdQoZAb02uPZqIGr8rz-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="bMdQoZAb02uPZqIGr8rz-2" target="bMdQoZAb02uPZqIGr8rz-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bMdQoZAb02uPZqIGr8rz-2" value="工作区(Working directory)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="90" y="70" width="100" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="bMdQoZAb02uPZqIGr8rz-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="bMdQoZAb02uPZqIGr8rz-3" target="bMdQoZAb02uPZqIGr8rz-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bMdQoZAb02uPZqIGr8rz-3" value="暂存区(stage area)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="280" y="125" width="110" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="bMdQoZAb02uPZqIGr8rz-4" value="本地仓库(Local repository)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="480" y="70" width="100" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="bMdQoZAb02uPZqIGr8rz-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="bMdQoZAb02uPZqIGr8rz-5" target="bMdQoZAb02uPZqIGr8rz-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bMdQoZAb02uPZqIGr8rz-5" value="远程仓库副本" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="670" y="125" width="110" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="bMdQoZAb02uPZqIGr8rz-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="bMdQoZAb02uPZqIGr8rz-6" target="bMdQoZAb02uPZqIGr8rz-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bMdQoZAb02uPZqIGr8rz-6" value="远程版本库(Remote repository)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="870" y="70" width="100" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="bMdQoZAb02uPZqIGr8rz-8" value="git add" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#7EA6E0;" parent="1" vertex="1">
+          <mxGeometry x="200" y="130" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bMdQoZAb02uPZqIGr8rz-10" value="git commit" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#7EA6E0;" parent="1" vertex="1">
+          <mxGeometry x="395" y="130" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bMdQoZAb02uPZqIGr8rz-13" value="git merge" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#7EA6E0;" parent="1" vertex="1">
+          <mxGeometry x="590" y="130" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bMdQoZAb02uPZqIGr8rz-15" value="git fetch" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#7EA6E0;" parent="1" vertex="1">
+          <mxGeometry x="790" y="130" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bMdQoZAb02uPZqIGr8rz-16" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="580" y="240" as="sourcePoint" />
+            <mxPoint x="870" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bMdQoZAb02uPZqIGr8rz-17" value="git push" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#7EA6E0;" parent="1" vertex="1">
+          <mxGeometry x="690" y="240" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bMdQoZAb02uPZqIGr8rz-18" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="870" y="90" as="sourcePoint" />
+            <mxPoint x="580" y="90" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bMdQoZAb02uPZqIGr8rz-19" value="git pull" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#7EA6E0;" parent="1" vertex="1">
+          <mxGeometry x="690" y="60" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bMdQoZAb02uPZqIGr8rz-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.451;entryY=0.01;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="bMdQoZAb02uPZqIGr8rz-19" target="bMdQoZAb02uPZqIGr8rz-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bMdQoZAb02uPZqIGr8rz-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.452;entryY=0.992;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="bMdQoZAb02uPZqIGr8rz-17" target="bMdQoZAb02uPZqIGr8rz-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
