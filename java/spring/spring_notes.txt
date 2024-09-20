@@ -1,0 +1,13 @@
+------------------------------
+一些相关文档
+
+// SpringBoot 自动装配原理详解
+https://javaguide.cn/system-design/framework/spring/spring-boot-auto-assembly-principles.html
+
+------------------------------
+计划去看的Spring原理
+
+Spring IOC原理
+Spring Boot Autoconfigure原理
+Spring Cloud原理
+
