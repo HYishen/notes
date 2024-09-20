@@ -146,11 +146,6 @@ tree -L N 以树状图显示所有文件，子文件夹显示到第 N 层
 sudo apt-get install tree
 ```
 
-### 文字处理命令
-sed
-
-awk
-
 ### 检查那些进程使用了某个文件
 fuser命令
 fuser能查出谁在使用这个资源
