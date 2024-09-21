@@ -53,18 +53,6 @@ wget
 make是用来编译的，它从Makefile中读取指令，然后编译。<br/> 
 make install是用来安装的，它也从Makefile中读取指令，安装到指定的位置。
 
-### 查找文件命令
-find
-
-常用参数：
-
--name
-
-如：
-```
-find /etc -name .bashrc
-```
-
 ### 查看文件内容命令
 more
 
