@@ -1,0 +1,7 @@
+BeanFactoryPostProcessor和BeanPostProcessor的配置应该用static方法
+
+您可以将@Bean方法声明为静态的，这样可以在不实例化其包含的配置类的情况下调用它们。当定义后置处理器bean（例如BeanFactoryPostProcessor或BeanPostProcessor类型）时，这样做特别有意义，因为这些bean在容器生命周期的早期就会被初始化，并且应该避免在该阶段触发配置的其他部分。
+
+相关链接:
+https://stackoverflow.com/questions/68830586/should-we-use-spring-bean-with-static-method
+
