@@ -1,0 +1,10 @@
+BeanFactoryPostProcessor和BeanPostProcessor的区别
+
+1.BeanFactoryPostProcessor 在实例化之前被调用，而 BeanPostProcessor 则是在实例化过程中使用
+2.BeanPostProcessor 是在 spring 容器加载了 bean 的定义文件并且实例化 bean 之后执行的。BeanPostProcessor 的执行顺序是在 BeanFactoryPostProcessor 之后。
+
+相关链接
+https://stackoverflow.com/questions/30455536/beanfactorypostprocessor-and-beanpostprocessor-in-lifecycle-events
+
+https://juejin.cn/post/6844903708745007112
+
